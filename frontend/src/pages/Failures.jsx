@@ -213,7 +213,9 @@ export default function Failures({ selectedStore }) {
                       </td>
 
                       <td className="py-4 px-4">
-                        {getBucketBadge(item.failure_bucket)}
+                        <div className="flex items-center">
+                          {getBucketBadge(item.failure_bucket)}
+                        </div>
                       </td>
 
                       <td className="py-4 px-4">
@@ -231,16 +233,18 @@ export default function Failures({ selectedStore }) {
                       </td>
 
                       <td className="py-4 px-4">
-                        {isCaptured ? (
-                          <span className="px-2.5 py-1 text-xs font-bold rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 flex items-center gap-1 w-max">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                            RECOVERED
-                          </span>
-                        ) : (
-                          <span className="px-2.5 py-1 text-xs font-bold rounded-full bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
-                            {item.latest_action?.action_type || 'PENDING'}
-                          </span>
-                        )}
+                        <div className="flex items-center">
+                          {isCaptured ? (
+                            <span className="px-2.5 py-1 text-xs font-bold rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 flex items-center gap-1 w-max whitespace-nowrap">
+                              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                              RECOVERED
+                            </span>
+                          ) : (
+                            <span className="px-2.5 py-1 text-xs font-bold rounded-full bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 whitespace-nowrap">
+                              {item.latest_action?.action_type || 'PENDING'}
+                            </span>
+                          )}
+                        </div>
                       </td>
 
                       <td className="py-4 px-4 text-right" onClick={(e) => e.stopPropagation()}>
@@ -283,7 +287,7 @@ export default function Failures({ selectedStore }) {
 
       {/* Payment Details Drawer / Modal */}
       {selectedEvent && (
-        <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div key={selectedEvent.id} className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="glass-card w-full max-w-2xl rounded-2xl border border-slate-700 bg-[#0f172a] overflow-hidden shadow-2xl animate-in fade-in zoom-in-95 duration-150">
             
             {/* Header */}
