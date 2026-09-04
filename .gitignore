@@ -1,0 +1,55 @@
+# Dependencies
+node_modules/
+backend/__pycache__/
+backend/app/__pycache__/
+backend/app/routers/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Build outputs
+frontend/dist/
+frontend/build/
+*.egg-info/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+backend/.env
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+recoverai.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+
+# Model files
+*.joblib
+*.pkl
+*.model
+
+# Misc
+*.pdf
