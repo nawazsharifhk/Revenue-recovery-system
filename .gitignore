@@ -53,3 +53,6 @@ htmlcov/
 
 # Misc
 *.pdf
+# Virtual Environment
+backend/.venv/
+
